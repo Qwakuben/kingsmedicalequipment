@@ -1,0 +1,80 @@
+
+.custom-background {
+    background-color: #6C946F;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+}
+h2{
+    font-style: italic;
+    color:rgb(5, 5, 5);
+}
+
+navbar-brand{
+    text-decoration: underline;
+}
+.navbar-custom {
+    background-color: #399918;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: white;
+    font-weight: bold;
+}
+.value-added-services {
+    margin-top: 100px;
+    padding: 50px;
+    background-color: #e6ffe6;
+}
+.value-added-services h2 {
+
+    font-weight: bold;
+    text-decoration: underline;
+}
+.value-added-services ul {
+    list-style-type: none;
+    padding: 0;
+}
+.value-added-services li {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+.value-added-services img {
+    max-width: 100%;
+    height: auto;
+}
+.business-hours-card {
+    margin: 20px auto;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.card-header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    font-size: 1.25rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.card-body {
+    padding: 20px;
+}
+.card-body p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+
+.contact-icon {
+    color: white;
+}
+.card-body p a {
+    color: white;
+    text-decoration: none;
+}
+.card-body p a:hover {
+    text-decoration: underline;
+    
+}
