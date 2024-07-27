@@ -9,6 +9,32 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contactus.css">
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+    const text = "Kings Medical Equipments";
+    const speed = 100; // Speed of typing in milliseconds
+    const delay = 5000; // Delay between repetitions in milliseconds
+
+    function typeWriter(text, index, callback) {
+        if (index < text.length) {
+            document.getElementById("typewriter").innerHTML += text.charAt(index);
+            setTimeout(function() {
+                typeWriter(text, index + 1, callback);
+            }, speed);
+        } else if (callback) {
+            setTimeout(callback, delay);
+        }
+    }
+
+    function startTypewriter() {
+        document.getElementById("typewriter").innerHTML = "";
+        typeWriter(text, 0, startTypewriter);
+    }
+
+    startTypewriter();
+})
+</script>
+    
 
    
 
@@ -23,7 +49,7 @@
 
             <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
                 <div class="container">
-                    <a class="navbar-brand mx-auto" href="#">Kings Medical Equipment</a>
+                    <a class="navbar-brand mx-auto" href="#">Kings Medical Equipments</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -50,20 +76,12 @@
             </nav>
 
 
-            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-              <div class="col-10 col-sm-8 col-lg-6">
-                <img src="images/Hero.jpg" class="d-block mx-lg-auto img-fluid" alt="Hero" width="700" height="500" loading="lazy">
-              </div>
-              <div class="col-lg-6">
-                
- <h1 class="display-10 fw-bold text-body-emphasis lh-1 mb-3" style="text-decoration: underline;">Kings Medical Equipment</h1><br>
-                <h4 class="display-6.5 fw-bold text-body-emphasis lh-1 mb-3">Our Goal:</h4>
-                <p class="lead">Support healthcare providers in delivering quality patient care while ensuring effective use and maintenance of medical equipment.</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                  <button type="button" class="btn btn-lg px-4 me-md-2" style="background-color: #399918; color: aliceblue; font-weight: bold;"><a class="nav-link" href="#Services">Our Services</a></button>
-                 
+            <section class="hero-section d-flex align-items-center justify-content-center text-center">
+                <div class="hero-content">
+                    <h1 class="hero-heading"><span id="typewriter"></span></h1>
+                    <p class="hero-paragraph">Support healthcare providers in delivering quality patient care while ensuring effective use and maintenance of medical equipment.</p>
                 </div>
-              </div>
+            </section>
             </div>
 
 
@@ -177,18 +195,18 @@
             </div>
 
             <div class="container my-4" id="contact us">
-                <div class="card" style="background-color: #e6ffe6; color: white;">
+                <div class="card" style="background-color: #a4a7bd;">
                     <div class="card-body">
-                        <h2 class="card-title text-center" style="color: black;">Reach Us</h2>
+                        <h2 class="card-title text-center" style="color: rgb(248, 245, 245);">Reach Us</h2>
                         <div class="row">
                             <div class="col-md-4 text-center">
                                 <i class="fas fa-phone-alt contact-icon fa-2x mb-2"></i>
-                                <p>Please call us and we will be happy to assist you.</p>
+                                <p class="Reach" style="color: black; font-weight: bold;">Please call us and we will be happy to assist you.</p>
                                 <p><a href="tel:0531838329" style="color: blue;">0531838329</a></p>
                             </div>
                             <div class="col-md-4 text-center">
                                 <i class="far fa-envelope contact-icon fa-2x mb-2"></i>
-                                <p>Please send us an email and we will be happy to assist you.</p>
+                                <p class="Reach" style="color: black; font-weight: bold;">Please send us an email and we will be happy to assist you.</p>
                                 <p><a href="mailto:support@ghana.com" style="color: blue;">kingsmedical1349@gmail.com</a></p>
                             </div>
                             <div class="col-md-4 text-center">
@@ -206,8 +224,8 @@
             </div>
             <div>
        <div class="container">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="background-color: #399918;">
-        <p class="col-md-4 mb-0 text-white fw-bold">© 2024 Kings Medical Equipment</p>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="background-color: #26355D;">
+        <p class="col-md-4 mb-0 text-white fw-bold">© 2024 Kings Medical Equipments</p>
         
             <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                 <svg class="bi me-2" width="40" height="32"><use xlink:href="#Contact Us"></use></svg>
