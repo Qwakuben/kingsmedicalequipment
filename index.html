@@ -4,35 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kings Medical Equipment</title>
-    <link rel="icon" type="image/x-icon" href="images/Hero.jpg">
+    <link rel="icon" type="image/x-icon" href="images/title image.jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="contactus.css">
+  
 <script>
-   document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const text = "Equipments";
-    const speed = 100; // Speed of typing in milliseconds
-    const delay = 5000; // Delay between repetitions in milliseconds
+    const typewriterElement = document.getElementById('typewriter');
+    let index = 0;
 
-    function typeWriter(text, index, callback) {
+    function typeWriter() {
         if (index < text.length) {
-            document.getElementById("typewriter").innerHTML += text.charAt(index);
-            setTimeout(function() {
-                typeWriter(text, index + 1, callback);
-            }, speed);
-        } else if (callback) {
-            setTimeout(callback, delay);
+            typewriterElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 100); // Adjust the speed of typing here
+        } else {
+            setTimeout(clearText, 5000); // Wait for 5 seconds before clearing the text
         }
     }
 
-    function startTypewriter() {
-        document.getElementById("typewriter").innerHTML = "";
-        typeWriter(text, 0, startTypewriter);
+    function clearText() {
+        typewriterElement.textContent = '';
+        index = 0;
+        setTimeout(typeWriter, 1000); // Wait for 1 second before starting to type again
     }
 
-    startTypewriter();
-})
+    typeWriter(); // Start the typewriter effect
+});
+
+    $('#imageModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); // Button that triggered the modal
+    var imageSrc = button.attr('href'); // Extract info from data-* attributes
+    var modal = $(this);
+    modal.find('.modal-body img').attr('src', imageSrc);
+});
+
+
 </script>
     
 
@@ -47,99 +56,283 @@
         <div class="container col-xxl-8 px-4 py-5">
 
 
-            <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
-                <div class="container">
-                    <a class="navbar-brand mx-auto" href="#">Kings Medical Equipments</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav mx-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#Services">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="gallary.html">Gallery</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#contact us">Contact Us</a>
-                            </li>
-                        </ul>
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                  <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                  <img class="fs-4"  src="images/logo.jpg" alt="this is the logo">
+                 
+                </a>
+          
+                <ul class="nav nav-pills">
+                  <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+                  <li class="nav-item"><a href="#Equipments" class="nav-link">Equipments</a></li>
+                  <li class="nav-item"><a href="#Services" class="nav-link">Services</a></li>
+                  <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                </ul>
+              </header>
+
+
+            <div class="container my-5">
+                <div class="row p-4 pb-0 pe-lg-0 pt-lg-4 align-items-center rounded-5 border shadow-lg">
+                  <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                    <div class="container mt-5">
+                        <h1>Kings Medical </h1>
+                        <h1 class="display-4 fw-bold lh-1 text-body-emphasis">
+                            <span id="typewriter" class="typewriter"></span>
+                        </h1>
                     </div>
+                    <p class="Land"><h3 class="h3" style="color: rgb(22, 114, 50);">Our Goal:</h3>Is to Support healthcare providers in delivering quality patient care while ensuring effective use and maintenance of medical equipment.</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                      
+                    </div>
+                  </div>
+                  <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+                      <img class="rounded-lg-3" src="images/Hospital bed.jpg" alt="" width="720">
+                  </div>
                 </div>
-            </nav>
-
-
-            <section class="hero-section d-flex align-items-center justify-content-center text-center">
-                <div class="hero-content">
-                    <h1>Kings Medical</h1>
-                    <h4 class="hero-heading"><span id="typewriter"></span></h4>
-                    <p class="hero-paragraph"><h2 style="color: rgb(9, 235, 39);">Our Goal</h2>Is to Support healthcare providers in delivering quality patient care while ensuring effective use and maintenance of medical equipment.</p>
-                </div>
-            </section>
+              </div>
             </div>
 
 
             <div class="container mt-5">
                 <div class="custom-background">
-                    <h2 class="list">List of Equipment</h2>
+                    <h2 class="text-center mb-4" id="Equipments">List of Equipment</h2>
                     <div class="row">
                         <div class="col-md-4">
-                            <ul>
-                                <li>Blood Pressure Monitor</li>
-                                <li>Stethoscope</li>
-                                <li>Thermometer</li>
-                                <li>Pulse Oximeter</li>
-                                <li>ECG Machine</li>
-                                <li>Defibrillator</li>
-                                <li>Ultrasound Machine</li>
-                                <li>X-Ray Machine</li>
-                                <li>MRI Machine</li>
-                                <li>Infusion Pump</li>
-                                <li>Ventilator</li>
-                                <li>Anesthesia Machine</li>
+                            <ul class="image-list">
+                                <li>
+                                    <a href="images/Dialysis machine.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Dialysis machine.jpg" alt="Dialysis machine" class="img-thumbnail">
+                                    </a>
+                                    <p>Dialysis machine</p>
+                                </li>
+                                <li>
+                                    <a href="images/Respirator.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Respirator.jpg" alt="Respirator" class="img-thumbnail">
+                                    </a>
+                                    <p>Respirator</p>
+                                </li>
+                                <li>
+                                    <a href="images/Enesthesia machine.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Enesthesia machine.jpg" alt="Blood Pressure Monitor" class="img-thumbnail">
+                                    </a>
+                                    <p>Enesthesia machine</p>
+                                </li>
+                                <li>
+                                    <a href="images/MRI Machine 2.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/MRI Machine 2.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>MRI Machine</p>
+                                </li>
+                                <li>
+                                    <a href="images/Wheelchair.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Wheelchair.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Wheelchair</p>
+                                </li>
+                                <li>
+                                    <a href="images/ECG MACHINE.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/ECG MACHINE.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>ECG Machine</p>
+                                </li>
+                                <li>
+                                    <a href="images/Ecg machine 2.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Ecg machine 2.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>ECG Machine</p>
+                                </li>
+                                <li>
+                                    <a href="images/Ecg machine 3.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Ecg machine 3.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>ECG Machine</p>
+                                </li>
+                                <li>
+                                    <a href="images/Operation table.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Operation table.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Operation Bed</p>
+                                </li>
+                                <li>
+                                    <a href="images/Ultrasound machine 2.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Ultrasound machine 2.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Ultrasound Machine</p>
+                                </li>
+                                <li>
+                                    <a href="images/Digital blood pressure monitor machine.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Digital blood pressure monitor machine.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Digital Blood Pressure</p>
+                                </li>
+                                <!-- Add more list items as needed -->
                             </ul>
                         </div>
                         <div class="col-md-4">
-                            <ul>
-                                <li>Surgical Light</li>
-                                <li>Operating Table</li>
-                                <li>Hospital Bed</li>
-                                <li>Wheelchair</li>
-                                <li>Crutches</li>
-                                <li>Walker</li>
-                                <li>Oxygen Tank</li>
-                                <li>Respirator</li>
-                                <li>Dialysis Machine</li>
-                                <li>Incubator</li>
-                                <li>Autoclave</li>
-                                <li>Surgical Instruments (e.g., scalpels, forceps)</li>
+                            <ul class="image-list">
+                                <li>
+                                    <a href="images/Oxygen tank.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Oxygen tank.jpg" alt="Oxygen tank" class="img-thumbnail">
+                                    </a>
+                                    <p>Oxygen tank</p>
+                                </li>
+                                <li>
+                                    <a href="images/Oxygen tank 2.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Oxygen tank 2.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Oxygen tank 2</p>
+                                </li>
+                                <li>
+                                    <a href="images/Hospital bed 2.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Hospital bed 2.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Hospital bed</p>
+                                </li>
+                                <li>
+                                    <a href="images/Infusion pump 2.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Infusion pump 2.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Infusion Pump</p>
+                                </li>
+                                <li>
+                                    <a href="images/Infusion pump.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Infusion pump.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Infusion Pump</p>
+                                </li>
+                                <li>
+                                    <a href="images/Ventilator Machine.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Ventilator Machine.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Ventilator Machine</p>
+                                </li>
+                                <li>
+                                    <a href="images/Infusion pump.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Infusion pump.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Infusion Pump</p>
+                                </li>
+                                <li>
+                                    <a href="images/Manual blood pressure monitor 1.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Manual blood pressure monitor 1.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Manual blood Pressure</p>
+                                </li>
+                                <li>
+                                    <a href="images/Manual blood pressure monitor 2.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Manual blood pressure monitor 2.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Manual blood Pressure</p>
+                                </li>
+                                <li>
+                                    <a href="images/Manual blood pressure monitor 3.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Manual blood pressure monitor 3.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Manual blood Pressure</p>
+                                </li>
+                                <li>
+                                    <a href="images/Digital blood pressure monitor machine 2.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Digital blood pressure monitor machine 2.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Digital Blood Pressure</p>
+                                </li>
+                                <!-- Add more list items as needed -->
                             </ul>
                         </div>
                         <div class="col-md-4">
-                            <ul>
-                                <li>Suture Kit</li>
-                                <li>Cast Cutter</li>
-                                <li>Medical Laser</li>
-                                <li>Endoscope</li>
-                                <li>Colonoscope</li>
-                                <li>Bronchoscope</li>
-                                <li>Echocardiogram Machine</li>
-                                <li>Holter Monitor</li>
-                                <li>Fetal Monitor</li>
-                                <li>Infant Incubator</li>
-                                <li>Phototherapy Unit</li>
-                                <li>Medical Ventil</li>
+                            <ul class="image-list">
+                                <li>
+                                    <a href="images/Walker.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Walker.jpg" alt="Walker" class="img-thumbnail">
+                                    </a>
+                                    <p>Walker</p>
+                                </li>
+                                <li>
+                                    <a href="images/Crutches.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Crutches.jpg" alt="Blood Pressure Monitor" class="img-thumbnail">
+                                    </a>
+                                    <p>Crutches</p>
+                                </li>
+                                <li>
+                                    <a href="images/Hospital bed.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Hospital bed.jpg" alt="Blood Pressure Monitor" class="img-thumbnail">
+                                    </a>
+                                    <p>Hospital Bed</p>
+                                </li>
+                                <li>
+                                    <a href="images/surgical light or lamp.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/surgical light or lamp.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>surgical light</p>
+                                </li>
+                                <li>
+                                    <a href="images/Walker 2.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Walker 2.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Walker</p>
+                                </li>
+                                <li>
+                                    <a href="images/manual External.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/manual External.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Manual External</p>
+                                </li>
+                                <li>
+                                    <a href="images/Surgical light.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Surgical light.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Surgical light</p>
+                                </li>
+                                <li>
+                                    <a href="images/Stethoscope.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Stethoscope.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Stethoscope</p>
+                                </li>
+                                <li>
+                                    <a href="images/thermometer.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/thermometer.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Thermometer</p>
+                                </li>
+                                <li>
+                                    <a href="images/Operation bed or table.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/Operation bed or table.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>Operation Bed</p>
+                                </li>
+                                <li>
+                                    <a href="images/MRI Machine 2.jpg" data-toggle="modal" data-target="#imageModal">
+                                        <img src="images/MRI Machine 2.jpg" alt="Oxygen tank 2" class="img-thumbnail">
+                                    </a>
+                                    <p>MRI Machine</p>
+                                </li>
+                                <!-- Add more list items as needed -->
                             </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        
+            <!-- Modal -->
+            <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="imageModalLabel">Image</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="" alt="Image" class="img-fluid" id="modalImage">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
             </div><br><br>
 
             <div class="container mt-5">
@@ -189,13 +382,13 @@
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <img src="images/blood-pressure.jpg" class="blood-pressure" alt="Value-Added Services" style="height: 500;">
+                        <img src="images/Hospital bed 2.jpg" class="blood-pressure" alt="Value-Added Services" style="height: 500;">
                     </div>
                 </div>
             </div>
             </div>
 
-            <div class="container my-4" id="contact us">
+            <div class="container my-4" id="contact">
                 <div class="card" style="background-color: #a4a7bd;">
                     <div class="card-body">
                         <h2 class="card-title text-center" style="color: rgb(248, 245, 245);">Reach Us</h2>
@@ -234,9 +427,9 @@
         
             <ul class="nav col-md-4 justify-content-end">
                 <a href="#"><li class="nav-item"><a href="#" class="nav-link px-2 text-white fw-bold">Home</li></a>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-white fw-bold">About Us</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-white fw-bold">About</a></li>
                 <li class="nav-item"><a href="#services" class="nav-link px-2 text-white fw-bold">Services</a></li>
-                <li class="nav-item"><a href="gallary.html" class="nav-link px-2 text-white fw-bold">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link px-2 text-white fw-bold">Equipments</a></li>
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-white fw-bold">Contact Us</a></li>
             </ul>
         </footer>

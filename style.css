@@ -14,7 +14,7 @@ navbar-brand{
     text-decoration: underline;
 }
 .navbar-custom {
-    background-color:#26355D;
+    background-color:#0779fc;
 }
 .navbar-custom .navbar-brand,
 .navbar-custom .nav-link {
@@ -84,7 +84,7 @@ navbar-brand{
     position: relative;
     width: 100%;
     height: 80vh;
-    background: url('images/Hero.jpg') no-repeat center center/cover;
+    background: url('images/Hospital\ bed.jpg') no-repeat center center/cover;
     color: #fff;
 }
 
@@ -132,4 +132,49 @@ navbar-brand{
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: rgb(20, 20, 20); }
+}
+
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 5px; /* Adjust this value to reduce/increase spacing */
+}
+
+p {
+    margin: 0;
+}
+
+
+
+
+/* List of Equipment Css */
+
+
+.img-thumbnail {
+    height: 350px; /* Adjust to desired height */
+    width: 100%; /* Make sure all images are the same width */
+    object-fit: cover; /* Ensure images maintain aspect ratio */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.img-thumbnail:hover {
+    transform: scale(1.1); /* Enlarge image on hover */
+}
+
+ul.image-list {
+    padding-left: 0;
+}
+
+ul.image-list li {
+    list-style-type: none;
+    margin-bottom: 10px; /* Adjust this value to reduce/increase spacing */
+}
+
+ul.image-list li p {
+    margin: 0;
+    text-align: center;
 }
