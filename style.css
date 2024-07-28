@@ -10,16 +10,19 @@ h2{
     color:rgb(5, 5, 5);
 }
 
-navbar-brand{
-    text-decoration: underline;
+/* Make the logo smaller and inline */
+.logo {
+    height: 30px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add some space between the logo and the text */
 }
-.navbar-custom {
-    background-color:#0779fc;
-}
-.navbar-custom .navbar-brand,
-.navbar-custom .nav-link {
-    color: white;
-    font-weight: bold;
+
+/* Make the navbar static */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white; /* Ensure the navbar has a background color */
 }
 .value-added-services {
     margin-top: 100px;
